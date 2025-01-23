@@ -17,9 +17,10 @@ import { Padre } from './07-tarea-memo/Padre';
 
 
 import './index.css'
+import '../src/08-useReducer/intro-Reducer.js';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
-    <Padre />
-  // </React.StrictMode>
-)
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   // <React.StrictMode>
+//     <Padre />
+//   // </React.StrictMode>
+// )
