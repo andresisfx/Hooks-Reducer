@@ -1,8 +1,8 @@
 
 export const toDoReducer = (initialState = [], action ) => {
     switch (action.type) {
-        case 'ABC':
-            throw new Error('Action no implementada');
+        case '[TODO] add new toDO':
+            return [...initialState, action.payload];
            
     
         default:
