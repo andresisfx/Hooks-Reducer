@@ -27,6 +27,7 @@ const addToDoAction = ()=>{
     }
 }
 
+
  toDos= todoReducer(toDos, addToDoAction);
 
  console.log({state:toDos});
