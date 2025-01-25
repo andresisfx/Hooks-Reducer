@@ -3,24 +3,28 @@ import { useReducer } from 'react'
 import { toDoReducer } from './toDoReducer.js'
 import { ToDoList } from './ToDoList.jsx';
 import { ToDoAdd } from './ToDoAdd.jsx';
+import { useEffect } from 'react';
 
 
 const initialState = [
-    {
-        id:new Date().getTime(),
-        description:'recolectar gema del alma',
-        done:false
-    },
-    {
-        id:new Date().getTime() * 3,
-        description:'recolectar gema del infinito',
-        done:false
-    }
+   
+    // {
+    //     id:new Date().getTime() * 3,
+    //     description:'recolectar gema del infinito',
+    //     done:false
+    // }
 ];
+const init=() => {
+    return JSON.parse(localStorage.getItem('toDos')) || [];
+}
 export const TodoApp = () => {
 
-    const [toDos, dispatch] = useReducer( toDoReducer, initialState );
+    const [toDos, dispatch] = useReducer( toDoReducer, initialState , init);
     console.log(toDos);
+
+    useEffect(() => {
+        localStorage.setItem('toDos', JSON.stringify(toDos));
+    })
     const onHandleToDo = (toDo) => {
         const action = {
             type:'[TODO] add new toDO',
